@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="eI4-xw-BUo" customClass="LogInView" customModule="Glaxo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogInBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Skd-2K-6hn">
+                    <rect key="frame" x="0.0" y="-10" width="320" height="888"/>
+                    <animations/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogInLogo" translatesAutoresizingMaskIntoConstraints="NO" id="9nF-qv-tA1">
+                    <rect key="frame" x="80" y="78" width="160" height="140"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="140" id="4VY-sc-GlZ"/>
+                        <constraint firstAttribute="width" constant="160" id="nik-jI-1Ud"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Broj kartice" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e2R-Ac-6G2" customClass="WhiteBorderdTextField" customModule="Glaxo" customModuleProvider="target">
+                    <rect key="frame" x="30" y="255" width="260" height="50"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="a9P-Yn-Xy5"/>
+                    </constraints>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                    <connections>
+                        <action selector="textEditingBegin:" destination="eI4-xw-BUo" eventType="editingDidBegin" id="9Gl-TG-Sri"/>
+                        <action selector="textEditingEnd:" destination="eI4-xw-BUo" eventType="editingDidEnd" id="hvi-xh-sco"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Lozinka" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ibV-g5-Oqh" customClass="WhiteBorderdTextField" customModule="Glaxo" customModuleProvider="target">
+                    <rect key="frame" x="30" y="325" width="260" height="50"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="UZy-Ie-DNs"/>
+                    </constraints>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                    <connections>
+                        <action selector="textEditingBegin:" destination="eI4-xw-BUo" eventType="editingDidBegin" id="Pyd-hb-2wn"/>
+                        <action selector="textEditingEnd:" destination="eI4-xw-BUo" eventType="editingDidEnd" id="I8B-Oy-QFh"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pE-Ob-MBl">
+                    <rect key="frame" x="30" y="415" width="260" height="50"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="NpQ-Yb-eZR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
+                    <state key="normal" title="Prijava">
+                        <color key="titleColor" red="1" green="0.38431372549999998" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="logInPressed:" destination="eI4-xw-BUo" eventType="touchUpInside" id="Cy8-M8-c3z"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="1pE-Ob-MBl" firstAttribute="leading" secondItem="eI4-xw-BUo" secondAttribute="leading" constant="30" id="2NE-kf-1qB"/>
+                <constraint firstAttribute="trailing" secondItem="ibV-g5-Oqh" secondAttribute="trailing" constant="30" id="C67-yy-0Ml"/>
+                <constraint firstItem="9nF-qv-tA1" firstAttribute="top" secondItem="eI4-xw-BUo" secondAttribute="topMargin" constant="70" id="KJ3-cT-gjK"/>
+                <constraint firstItem="ibV-g5-Oqh" firstAttribute="leading" secondItem="eI4-xw-BUo" secondAttribute="leading" constant="30" id="KaD-QR-Nix"/>
+                <constraint firstItem="1pE-Ob-MBl" firstAttribute="top" secondItem="ibV-g5-Oqh" secondAttribute="bottom" constant="40" id="Pu8-fb-rRn"/>
+                <constraint firstItem="Skd-2K-6hn" firstAttribute="top" secondItem="eI4-xw-BUo" secondAttribute="top" constant="-10" id="Vby-If-fxw"/>
+                <constraint firstItem="e2R-Ac-6G2" firstAttribute="leading" secondItem="eI4-xw-BUo" secondAttribute="leading" constant="30" id="YOz-eI-laV"/>
+                <constraint firstAttribute="trailing" secondItem="Skd-2K-6hn" secondAttribute="trailing" id="ZYN-jW-aYB"/>
+                <constraint firstItem="9nF-qv-tA1" firstAttribute="centerX" secondItem="eI4-xw-BUo" secondAttribute="centerX" id="f59-jc-dxA"/>
+                <constraint firstItem="e2R-Ac-6G2" firstAttribute="top" secondItem="9nF-qv-tA1" secondAttribute="bottom" constant="37" id="lW2-b5-mKr"/>
+                <constraint firstItem="Skd-2K-6hn" firstAttribute="leading" secondItem="eI4-xw-BUo" secondAttribute="leading" id="phw-Fk-TuH"/>
+                <constraint firstItem="ibV-g5-Oqh" firstAttribute="top" secondItem="e2R-Ac-6G2" secondAttribute="bottom" constant="20" id="qwP-oG-pHS"/>
+                <constraint firstAttribute="trailing" secondItem="1pE-Ob-MBl" secondAttribute="trailing" constant="30" id="vzP-Gq-RdC"/>
+                <constraint firstAttribute="trailing" secondItem="e2R-Ac-6G2" secondAttribute="trailing" constant="30" id="x3e-cX-of1"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="firstField" destination="e2R-Ac-6G2" id="Iig-FB-bbn"/>
+                <outlet property="logoHeightConstraint" destination="4VY-sc-GlZ" id="uGN-oV-mAX"/>
+                <outlet property="logoWidthConstraint" destination="nik-jI-1Ud" id="dIn-Bk-mUM"/>
+                <outlet property="secondField" destination="ibV-g5-Oqh" id="05Y-Sh-62B"/>
+                <outlet property="topConstraint" destination="KJ3-cT-gjK" id="Kxe-Bo-q2D"/>
+                <outlet property="topInputTextDistanceConstraint" destination="lW2-b5-mKr" id="QR2-PX-jhx"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="LogInBackground" width="500" height="888"/>
+        <image name="LogInLogo" width="408" height="344"/>
+    </resources>
+</document>
