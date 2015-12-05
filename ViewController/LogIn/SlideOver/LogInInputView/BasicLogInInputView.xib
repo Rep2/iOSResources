@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="BasicLogInInputView" id="GGS-Uu-9fc" userLabel="LogInInputView" customClass="BasicLogInInputView" customModule="Surveys" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8qa-U6-qGD" customClass="BorderdTextField" customModule="Surveys" customModuleProvider="target">
+                    <rect key="frame" x="20" y="85" width="280" height="45"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="RMk-5H-aSf"/>
+                        <constraint firstAttribute="height" constant="45" id="SsS-nF-h4B"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                            <color key="value" red="0.58823529411764708" green="0.58823529411764708" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="delegate" destination="GGS-Uu-9fc" id="fMc-8D-zUv"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Mv-l0-4oU" customClass="BorderdTextField" customModule="Surveys" customModuleProvider="target">
+                    <rect key="frame" x="20" y="146" width="280" height="45"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="3yw-YU-xi4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                            <color key="value" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="delegate" destination="GGS-Uu-9fc" id="f20-yf-ulH"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repeat password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="srl-NL-eYh" customClass="BorderdTextField" customModule="Surveys" customModuleProvider="target">
+                    <rect key="frame" x="20" y="207" width="280" height="45"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="hKn-S0-WZY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                            <color key="value" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="delegate" destination="GGS-Uu-9fc" id="vT5-pa-oWU"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dH5-dZ-Olu" customClass="BorderdTextField" customModule="Surveys" customModuleProvider="target">
+                    <rect key="frame" x="20" y="268" width="280" height="45"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="4eQ-Ru-Nkj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                            <color key="value" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="delegate" destination="GGS-Uu-9fc" id="xhI-uD-Gbg"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogm-ha-c9s">
+                    <rect key="frame" x="20" y="530" width="280" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="m7o-yC-na0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="Cancle">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="odustaniPressed:" destination="GGS-Uu-9fc" eventType="touchUpInside" id="xI7-bN-qqL"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yH-RC-pgm">
+                    <rect key="frame" x="20" y="470" width="280" height="45"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="Hc2-nw-6cb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
+                    <state key="normal" title="Log In">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="actionInvoked:" destination="GGS-Uu-9fc" eventType="touchUpInside" id="yi2-Jh-sly"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="9Mv-l0-4oU" firstAttribute="centerX" secondItem="GGS-Uu-9fc" secondAttribute="centerX" id="0cn-Jm-e1n"/>
+                <constraint firstItem="srl-NL-eYh" firstAttribute="top" secondItem="9Mv-l0-4oU" secondAttribute="bottom" constant="16" id="2oY-5o-2Ik"/>
+                <constraint firstItem="8qa-U6-qGD" firstAttribute="centerX" secondItem="GGS-Uu-9fc" secondAttribute="centerX" id="8Fq-43-cc6"/>
+                <constraint firstItem="5yH-RC-pgm" firstAttribute="width" secondItem="8qa-U6-qGD" secondAttribute="width" id="8Sz-Lc-U5j"/>
+                <constraint firstItem="srl-NL-eYh" firstAttribute="centerX" secondItem="GGS-Uu-9fc" secondAttribute="centerX" id="Byp-Q5-KoE"/>
+                <constraint firstItem="srl-NL-eYh" firstAttribute="width" secondItem="8qa-U6-qGD" secondAttribute="width" id="GuO-97-uaC"/>
+                <constraint firstItem="dH5-dZ-Olu" firstAttribute="width" secondItem="8qa-U6-qGD" secondAttribute="width" id="H6d-cB-C2t"/>
+                <constraint firstItem="8qa-U6-qGD" firstAttribute="top" secondItem="GGS-Uu-9fc" secondAttribute="top" constant="85" id="JZk-Bb-iok"/>
+                <constraint firstItem="9Mv-l0-4oU" firstAttribute="top" secondItem="8qa-U6-qGD" secondAttribute="bottom" constant="16" id="Kx7-gO-zQn"/>
+                <constraint firstItem="9Mv-l0-4oU" firstAttribute="width" secondItem="8qa-U6-qGD" secondAttribute="width" id="LRS-Nw-mGZ"/>
+                <constraint firstItem="dH5-dZ-Olu" firstAttribute="centerX" secondItem="GGS-Uu-9fc" secondAttribute="centerX" id="Zjm-5J-E7m"/>
+                <constraint firstAttribute="trailing" secondItem="Ogm-ha-c9s" secondAttribute="trailing" constant="20" id="b0X-Ge-J5N"/>
+                <constraint firstItem="5yH-RC-pgm" firstAttribute="centerX" secondItem="GGS-Uu-9fc" secondAttribute="centerX" id="nde-e3-Ysl"/>
+                <constraint firstItem="Ogm-ha-c9s" firstAttribute="top" secondItem="5yH-RC-pgm" secondAttribute="bottom" constant="15" id="rDU-5t-GHX"/>
+                <constraint firstItem="dH5-dZ-Olu" firstAttribute="top" secondItem="srl-NL-eYh" secondAttribute="bottom" constant="16" id="t6c-8J-Ggg"/>
+                <constraint firstAttribute="bottom" secondItem="Ogm-ha-c9s" secondAttribute="bottom" constant="8" id="wiq-ya-dem"/>
+                <constraint firstItem="Ogm-ha-c9s" firstAttribute="leading" secondItem="GGS-Uu-9fc" secondAttribute="leading" constant="20" id="yta-1I-MbJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="button" destination="5yH-RC-pgm" id="oQF-26-rAf"/>
+                <outlet property="elementWidth" destination="RMk-5H-aSf" id="ELP-Vy-rya"/>
+                <outlet property="firstLabel" destination="8qa-U6-qGD" id="bKC-od-a55"/>
+                <outlet property="fourthLabel" destination="dH5-dZ-Olu" id="Fhd-ly-Zqn"/>
+                <outlet property="secondLabel" destination="9Mv-l0-4oU" id="ZSS-tH-WlV"/>
+                <outlet property="thirdLabel" destination="srl-NL-eYh" id="C5Q-8T-Ga9"/>
+                <outlet property="topConstraint" destination="JZk-Bb-iok" id="Iq7-C0-xpC"/>
+            </connections>
+        </view>
+    </objects>
+</document>
