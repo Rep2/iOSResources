@@ -14,10 +14,22 @@ class GenericRefreshTableViewController: ViewControllerWithDecorator{
     
     var sections:[GenericSection]!
     
+    var updateFunc:((forceUpdate:Bool, observer:([GenericSection]) -> Void) -> [GenericSection]?)?
+    
+    func initController(updateFunc:(forceUpdate:Bool, observer:([GenericSection]) -> Void) -> [GenericSection]?){
+        self.updateFunc = updateFunc
+        
+        update()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         table.beginRefresh()
+        
+        if updateFunc != nil{
+            table.refresh.addTarget(self, action: "update", forControlEvents: .ValueChanged)
+        }
         
         if let sections = sections{
             table.sections = sections
@@ -35,6 +47,10 @@ class GenericRefreshTableViewController: ViewControllerWithDecorator{
             table.reloadData()
             table.endRefresh()
         }
+    }
+    
+    func update(){
+        sections = updateFunc!(forceUpdate: true, observer: setSections)
     }
     
     func stopRefresh(){
