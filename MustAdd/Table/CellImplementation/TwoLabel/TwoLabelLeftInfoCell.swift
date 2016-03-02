@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TwoLabelLeftInfoCell:GenericCellImplementation{
+class TwoLabelLeftInfoCell:IRGenericCellImplementation{
 
     @IBOutlet weak var firstLabel: UILabel!
     @IBOutlet weak var secondLabel: UILabel!
@@ -16,7 +16,7 @@ class TwoLabelLeftInfoCell:GenericCellImplementation{
     @IBOutlet weak var secondLabelRightConstraint: NSLayoutConstraint!
     
     override func initElements(){
-        elements[CellElementIdentifiers.FirstLabel] = firstLabel
-        elements[CellElementIdentifiers.SecondLabel] = secondLabel
+        elements[IRCellElementIdentifiers.FirstLabel] = firstLabel
+        elements[IRCellElementIdentifiers.SecondLabel] = secondLabel
     }    
 }

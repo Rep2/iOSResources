@@ -8,8 +8,8 @@
 
 import UIKit
 
-// Enumeration containing identifiers of all registered cells
-enum CellIdentifiers:String{
+/// Cell implementation identifiers of all registered cells
+enum IRCellIdentifier:String{
     case OneLabelBasic = "OneLabelTableViewCell"
     case TwoLabelRightDetail = "TwoLabelLeftInfoCellImplementation"
     
@@ -17,18 +17,19 @@ enum CellIdentifiers:String{
     case SubtitelWithImage = "SubtitelWithImageCell"
 }
 
-enum CellElementIdentifiers:String{
-    case FirstLabel = "firstLabel"
-    case SecondLabel = "secondLabel"
+/// Element identifiers
+enum IRCellElementIdentifiers{
+    case FirstLabel
+    case SecondLabel
     
-    case FirstImage = "firstImage"
+    case FirstImage
 }
 
 // Generic cell implementation
-class GenericCellImplementation:UITableViewCell{
+class IRGenericCellImplementation:UITableViewCell{
 
     // Dictionary used to access all cells labels
-    var elements:[CellElementIdentifiers:UIView]
+    var elements:[IRCellElementIdentifiers:UIView]
     
     required init?(coder aDecoder: NSCoder) {
         elements = [:]
@@ -42,7 +43,7 @@ class GenericCellImplementation:UITableViewCell{
     
     // Sets labels text with given data
     // - parameter data: dictionary containing data which is used to init labels
-    func setData(data:[CellElementIdentifiers:Any]){
+    func setData(data:[IRCellElementIdentifiers:Any]){
         if elements == [:]{
             initElements()
         }

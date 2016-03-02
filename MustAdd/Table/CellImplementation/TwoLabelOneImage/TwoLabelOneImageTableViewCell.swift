@@ -9,16 +9,16 @@
 import UIKit
 
 // One label cell implementation
-class TwoLabelOneImageTableViewCell:GenericCellImplementation{
+class TwoLabelOneImageTableViewCell:IRGenericCellImplementation{
     
     @IBOutlet weak var firstLabel: UILabel!
     @IBOutlet weak var secondLabel: UILabel!
     @IBOutlet weak var firstImage: UIImageView!
     
     override func initElements(){
-        elements[CellElementIdentifiers.FirstLabel] = firstLabel
-        elements[CellElementIdentifiers.SecondLabel] = secondLabel
-        elements[CellElementIdentifiers.FirstImage] = firstImage
+        elements[IRCellElementIdentifiers.FirstLabel] = firstLabel
+        elements[IRCellElementIdentifiers.SecondLabel] = secondLabel
+        elements[IRCellElementIdentifiers.FirstImage] = firstImage
     }
     
 }

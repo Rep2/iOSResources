@@ -9,13 +9,13 @@
 import UIKit
 
 // One label cell implementation
-class OneLabelTableViewCell:GenericCellImplementation{
+class OneLabelTableViewCell:IRGenericCellImplementation{
 
     @IBOutlet weak var firstLabel: UILabel!
     @IBOutlet weak var leftConstraint: NSLayoutConstraint!
     
     override func initElements(){
-        elements[CellElementIdentifiers.FirstLabel] = firstLabel
+        elements[IRCellElementIdentifiers.FirstLabel] = firstLabel
     }
 
 }

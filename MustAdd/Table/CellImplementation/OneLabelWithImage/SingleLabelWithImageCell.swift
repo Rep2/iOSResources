@@ -8,13 +8,13 @@
 
 import UIKit
 
-class SingleLabelWithImageCell:GenericCellImplementation{
+class SingleLabelWithImageCell:IRGenericCellImplementation{
 
     @IBOutlet weak var firstImage: UIImageView!
     @IBOutlet weak var firstLabel: UILabel!
     
     override func initElements(){
-        elements[CellElementIdentifiers.FirstLabel] = firstLabel
-        elements[CellElementIdentifiers.FirstImage] = firstImage
+        elements[IRCellElementIdentifiers.FirstLabel] = firstLabel
+        elements[IRCellElementIdentifiers.FirstImage] = firstImage
     }
 }

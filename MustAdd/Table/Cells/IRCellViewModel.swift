@@ -8,12 +8,12 @@
 
 import UIKit
 
-class CellModel{
-    
-    /// Basic cell identifiers
+/// ViewModel that storec cell creation information and 
+/// allows communication with the created cell
+class IRCellViewModel{
     
     /// Identifier used to create cell instance
-    let cellIdentifier:String
+    let implementationIdentifier: IRCellIdentifier
     
     /// Height of the cell
     let height:CGFloat
@@ -25,13 +25,13 @@ class CellModel{
     /// Cell update
     
     /// Data used to populate cell instance. Needs to be set as it used on every will display cell.
-    var data:[CellElementIdentifiers:Any]
+    var data:[IRCellElementIdentifiers:Any]
     
     /// Cell implementation function used to update it
-    var cellUpdateFunc:([CellElementIdentifiers:Any] -> Void)?
+    var cellUpdateFunc:([IRCellElementIdentifiers:Any] -> Void)?
     
     /// Sets data and updates cell
-    func setDataAndUpdateCell(data:[CellElementIdentifiers:Any]){
+    func setDataAndUpdateCell(data:[IRCellElementIdentifiers:Any]){
         self.data = data
         
         if let cellUpdateFunc = cellUpdateFunc{
@@ -39,24 +39,26 @@ class CellModel{
         }
     }
     
-    
-    /// Post init
-    
     /// Any custom initis
     var postInit:((UITableViewCell)->Void)?
-    func setPostInitFunc(postInit:((cell:UITableViewCell)->Void)?){
-        self.postInit = postInit
-    }
-    
     
     /// Cell events
     
+    /// Gets called on cell selection
     var didSelectCellFunc:(() -> Void)?
     
+    /// Observer function
     var cellEventHandler:((Any?) -> Void)?
     
-    init(cellIdentifier:String, height:CGFloat = 44, accessoryType:UITableViewCellAccessoryType = .None, data:[CellElementIdentifiers:Any] = [:], postInit:((UITableViewCell)->Void)? = nil, didSelectCellFunc:(()->Void)? = nil, cellEventHandler:((Any?) -> Void)? = nil){
-        self.cellIdentifier = cellIdentifier
+    init(implementationIdentifier: IRCellIdentifier,
+        height:CGFloat = 44,
+        accessoryType:UITableViewCellAccessoryType = .None,
+        data:[IRCellElementIdentifiers:Any] = [:],
+        postInit:((UITableViewCell)->Void)? = nil,
+        didSelectCellFunc:(()->Void)? = nil,
+        cellEventHandler:((Any?) -> Void)? = nil){
+            
+        self.implementationIdentifier = implementationIdentifier
         self.height = height
         self.accessoryType = accessoryType
         
@@ -65,15 +67,5 @@ class CellModel{
         
         self.didSelectCellFunc = didSelectCellFunc
         self.cellEventHandler = cellEventHandler
-    }
-}
-
-class CellSection{
-    let title:String?
-    var cells:[CellModel]
-    
-    init(title:String?, cells:[CellModel]){
-        self.title = title
-        self.cells = cells
     }
 }
