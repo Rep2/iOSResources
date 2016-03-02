@@ -9,26 +9,25 @@
 import UIKit
 
 /**
-    Generic UIViewController inmplementing BasicTable
+ Generic UIViewController implementing IRTableView
 */
 class GenericTableViewController: ViewControllerWithDecorator{
     
-    @IBOutlet weak var table: GenericTable!
+    @IBOutlet weak var table: IRTableView!
     
-    var sections:[GenericSection]!
+    var cellViewModelSections:[IRCellViewModelSection]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        table.sections = sections
+        table.setData(cellViewModelSections)
     }
     
-    func setSections(sections:[GenericSection]){
-        self.sections = sections
+    func setSections(sections:[IRCellViewModelSection]){
+        cellViewModelSections = sections
         
         if table != nil{
-            table.sections = sections
-            table.reloadData()
+            table.setData(cellViewModelSections)
         }
     }
 }

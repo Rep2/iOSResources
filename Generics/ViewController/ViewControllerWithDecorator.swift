@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewControllerWithDecorator: BaseBlackNavBarContoller{
+class ViewControllerWithDecorator: UIViewController{
     
     var decorator:GenericViewControllerDecorator?
     

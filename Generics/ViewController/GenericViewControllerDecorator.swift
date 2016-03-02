@@ -6,7 +6,23 @@
 //  Copyright © 2016 iOS pro team. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+
+class GenericsWireframe{
+    
+    var genericStoryboard: UIStoryboard!
+    
+    init(){
+        genericStoryboard = UIStoryboard(name: "Generics", bundle: nil)
+    }
+    
+    func getTableViewController() -> GenericTableViewController{
+        return genericStoryboard.instantiateViewControllerWithIdentifier("GenericTableViewController") as! GenericTableViewController
+    }
+    
+}
+
 
 class GenericViewControllerDecorator{
     
