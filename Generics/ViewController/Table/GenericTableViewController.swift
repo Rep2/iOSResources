@@ -30,4 +30,16 @@ class GenericTableViewController: ViewControllerWithDecorator{
             table.setData(cellViewModelSections)
         }
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        table.superviewWillApper()
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        table.superviewDidDisappear()
+    }
 }

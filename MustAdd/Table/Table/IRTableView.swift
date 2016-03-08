@@ -26,18 +26,12 @@ class IRTableView: UITableView, UITableViewDataSource, UITableViewDelegate{
     /// Label that show message when no data is present
     var noDataLabel:UILabel!
     
-    /// Refresh indicator
-    let refreshControll = UIRefreshControl()
-    
-    /// Refresh controll update funcion. If set refresh will be enabled
-    var refreshControllUpdateFunction: (() -> ())?
-    
     init(frame:CGRect, sections:[IRCellViewModelSection] = []){
         self.cellViewModelSections = sections
         
         super.init(frame: frame, style: .Grouped)
         
-        addSubview(refreshControll)
+        addSubview(refreshControl)
         
         postInit()
     }
@@ -47,8 +41,6 @@ class IRTableView: UITableView, UITableViewDataSource, UITableViewDelegate{
 
         super.init(coder: aDecoder)
         
-        addSubview(refreshControll)
-        
         postInit()
     }
     
@@ -56,13 +48,38 @@ class IRTableView: UITableView, UITableViewDataSource, UITableViewDelegate{
         delegate = self
         dataSource = self
         
-        refreshControll.addTarget(self, action: "refreshControllTarget", forControlEvents: .ValueChanged)
-        refreshControll.beginRefreshing()
+        initRefreshControl()
         
         noDataLabelInit()
         
         noDataShow = {(sections:AnyObject) -> Bool in
-            return (sections as! [IRCellViewModelSection]).count == 0 && !self.refreshControll.refreshing
+            return (sections as! [IRCellViewModelSection]).count == 0 && !self.refreshControl.refreshing
+        }
+    }
+    
+    /// Refresh indicator
+    var refreshControl = UIRefreshControl()
+    
+    /// Refresh state
+    var isRefreshing = false
+    
+    /// Refresh controll update funcion. Set to enable pull to refresh
+    var refreshControllUpdateFunction: (() -> ())?
+    
+    /// Prepeares UIRefreshControll. Call from init
+    func initRefreshControl(){
+        addSubview(refreshControl)
+        
+        refreshControl.addTarget(self, action: "refreshControllTarget", forControlEvents: .ValueChanged)
+        refreshControl.beginRefreshing()
+    
+        isRefreshing = true
+    }
+    
+    /// Gets called on swipe down if refreshControllUpdateFunction is set
+    func refreshControllTarget(){
+        if let update = refreshControllUpdateFunction{
+            update()
         }
     }
     
@@ -85,20 +102,41 @@ class IRTableView: UITableView, UITableViewDataSource, UITableViewDelegate{
         
         reloadData()
     
-        endRefreshControllAnimation(wasEmpty)
+        endRefreshAnimation(wasEmpty, dataFetched: true)
         
         if refreshControllUpdateFunction == nil{
-            refreshControll.removeFromSuperview()
+            refreshControl.removeFromSuperview()
         }else{
-            addSubview(refreshControll)
+            addSubview(refreshControl)
         }
        
     }
     
-    /// Ends refresh controll animation and resets content
-    /// Parameter wasEmpty: If no data was previously shown, will not animate transition
-    func endRefreshControllAnimation(wasEmpty: Bool){
-        refreshControll.endRefreshing()
+    /// Call on viewWillApper
+    func superviewWillApper(){
+        if isRefreshing && !refreshControl.refreshing{
+            startRefreshAnimation()
+        }
+    }
+    
+    /// Call on viewDidDisapper
+    func superviewDidDisappear(){
+        endRefreshAnimation(false, dataFetched: !isRefreshing)
+    }
+    
+    /// Presents animating UIRefreshControll
+    func startRefreshAnimation(){
+        refreshControl.beginRefreshing()
+        contentOffset = CGPointMake(0, -refreshControl.bounds.size.height)
+        
+        isRefreshing = true
+    }
+    
+    /// Hides UIRefreshControll and saves state of refresh
+    func endRefreshAnimation(wasEmpty: Bool, dataFetched: Bool){
+        refreshControl.endRefreshing()
+        
+        isRefreshing = !dataFetched
         
         if !wasEmpty{
             setContentOffset(CGPointZero, animated: true)
@@ -107,13 +145,6 @@ class IRTableView: UITableView, UITableViewDataSource, UITableViewDelegate{
         }
     }
     
-    
-    /// Gets called on swipe down if refreshControllUpdateFunction is set
-    func refreshControllTarget(){
-        if let update = refreshControllUpdateFunction{
-            update()
-        }
-    }
     
     // Events
     
