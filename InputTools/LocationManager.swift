@@ -14,6 +14,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate{
     var locationManager:CLLocationManager!
     static var location: CLLocation?
     
+    private static var subscriptions: [CLLocation -> Void] = []
+    
     override init(){
         locationManager = CLLocationManager()
         
@@ -32,6 +34,14 @@ class LocationManager: NSObject, CLLocationManagerDelegate{
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         LocationManager.location = locations[0]
+        
+        for function in LocationManager.subscriptions{
+            function(locationManager.location!)
+        }
+    }
+    
+    static func addSubscription(function: (CLLocation -> Void)){
+        subscriptions.append(function)
     }
     
 }
