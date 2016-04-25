@@ -9,10 +9,12 @@
 import UIKit
 
 /// TabbarController controller made for easy use
-class BaseTabViewController: UITabBarController{
+class BaseTabBarController: UITabBarController{
+    
+    
     
     /// Initializes tabbar with views
-    init(viewControllers: [UIViewController]){
+    init(viewControllers: [UINavigationController]){
         super.init(nibName: nil, bundle: nil)
         
         self.viewControllers = viewControllers
@@ -32,8 +34,9 @@ class BaseTabViewController: UITabBarController{
     
     /// Customizes tabbar
     func postInit(){
+        tabBar.barTintColor = UIColor(red: 0, green: 122.0/255, blue: 1, alpha: 1)
+        tabBar.tintColor = UIColor.whiteColor()
         
     }
-    
     
 }
